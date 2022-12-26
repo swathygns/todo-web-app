@@ -1,25 +1,34 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import { TodoItem } from './component/TodoItem';
+const items = [
+  {
+    "name":"Buy Milk",
+    "status":"Complete",
+    "id":1
+  },
+  {
+    "name":"phone bill",
+    "status":"active",
+    "id":2
+  }
+]
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Welcome!!</p>
+      <div>
+        <ul>
+          {
+            items.map((item) => {
+              return (< TodoItem props = {item} />) 
+            })
+          }
+        </ul>
+      </div>
     </div>
+
   );
 }
 
