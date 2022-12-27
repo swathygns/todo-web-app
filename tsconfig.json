@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "u",
     "lib": [
       "dom",
       "dom.iterable",
