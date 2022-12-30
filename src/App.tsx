@@ -4,9 +4,18 @@ import './App.css';
 import { TodoItem } from './component/TodoItem';
 
 function App() {
-  let [todoItem,setTodoItem] = useState([])
+  let [todoItem,setTodoItem] = useState([   {
+    "name":"Buy Milk",
+    "status":"Complete",
+    "id":1
+},
+{
+    "name":"phone bill",
+    "status":"active",
+    "id":2
+}])
   useEffect( () => {
-     fetch('http://localhost:8080/todoItems/')
+     fetch('https://baodtkcmp4.execute-api.us-east-1.amazonaws.com/getTodoList')
     .then((response) => response.json())
     .then((data) => setTodoItem(data));
   },[])
